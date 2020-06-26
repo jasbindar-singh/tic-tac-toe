@@ -1,0 +1,28 @@
+.board-container{
+    padding: 50px;
+    box-shadow: 0px 28px 97px -57px rgba(0,0,0,0.75);
+    border-radius: 30px;
+}
+
+.board{
+    width: 420px;
+    height: 420px;
+    display: grid;
+    grid-template: repeat(3, 1fr)/repeat(3, 1fr);
+    background-image: url('/bg.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@media only screen and (max-width: 600px) {
+    .board{
+        width: 300px;
+        height: 300px;
+    }
+  
+    .board-container{
+      padding: 0px;
+      box-shadow: none;
+    }
+  }

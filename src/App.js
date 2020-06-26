@@ -1,24 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import Board from './components/Board/Board.jsx';
+import Button from './components/Button/Button';
 
 function App() {
+
+  const [start, setStart] = useState(false)
+
+  const handleClick = () => {
+    setStart(true)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="main">
+      <h2>Tic-Tac-Toe</h2>
+      {
+        start ? <Board /> : (
+          <>
+            <div className="splash">
+              <img className="splash-image" src='/x.png' alt="X"/> : 
+              <img className="splash-image" src='/o.png' alt="X"/>
+            </div>
+            <Button onPress={handleClick}>Start</Button>
+          </>
+        )
+      }
     </div>
   );
 }
